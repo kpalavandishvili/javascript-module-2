@@ -15,59 +15,64 @@ and returns the number of restaurants in this area.
 */
 
 let restaurant1 = {
-    name: "Paesano",
-    totalSeats: 10,
-    numberOfCustomers: 8,
-    address: {
-      city: "Glasgow",
-      area: "center",
-    },
-    menu: ["pizza", "calzone", "salad"],
-  };
-  
-  let restaurant2 = {
-    name: "Ubiquitous Chip",
-    totalSeats: 20,
-    numberOfCustomers: 10,
-    address: {
-      city: "Glasgow",
-      area: "west",
-    },
-    menu: ["salad", "chocolate cake", "roast lamb"],
-  };
-  
-  let restaurant3 = {
-    name: "Monkeyz",
-    totalSeats: 15,
-    numberOfCustomers: 8,
-    address: {
-      city: "Glasgow",
-      area: "center",
-    },
-    menu: ["stew", "chocolate cake", "panini"],
-  };
-  
-  let restaurants = [restaurant1, restaurant2, restaurant3];
-  
-  /*
-  DO NOT EDIT ANYTHING ABOVE THIS LINE
-  WRITE YOUR CODE BELOW
-  */
-  
-  let restaurantFinderApplication = {
-    applicationName: "Restaurant Finder",
-    applicationVersion: "1.0",
-    restaurants: restaurants,
-    findAvailableRestaurants: function (numberOfPeople) {
-      // Complete here
-    },
-    findRestaurantServingDish: function (dishName) {
-      // Complete here
-    },
-    countNumberOfRestaurantsInArea: function (area) {
-      // Complete here
-    },
-  };
+  name: "Paesano",
+  totalSeats: 10,
+  numberOfCustomers: 8,
+  address: {
+    city: "Glasgow",
+    area: "center",
+  },
+  menu: ["pizza", "calzone", "salad"],
+};
+
+let restaurant2 = {
+  name: "Ubiquitous Chip",
+  totalSeats: 20,
+  numberOfCustomers: 10,
+  address: {
+    city: "Glasgow",
+    area: "west",
+  },
+  menu: ["salad", "chocolate cake", "roast lamb"],
+};
+
+let restaurant3 = {
+  name: "Monkeyz",
+  totalSeats: 15,
+  numberOfCustomers: 8,
+  address: {
+    city: "Glasgow",
+    area: "center",
+  },
+  menu: ["stew", "chocolate cake", "panini"],
+};
+
+let restaurants = [restaurant1, restaurant2, restaurant3];
+
+/*
+DO NOT EDIT ANYTHING ABOVE THIS LINE
+WRITE YOUR CODE BELOW
+*/
+
+let restaurantFinderApplication = {
+  applicationName: "Restaurant Finder",
+  applicationVersion: "1.0",
+  restaurants: restaurants,
+  findAvailableRestaurants: function (numberOfPeople) {
+    return this.restaurants.filter(r => (r.totalSeats - r.numberOfCustomers) >= numberOfPeople)
+      .map(r => r.name)
+    // Complete here
+  },
+  findRestaurantServingDish: function (dishName) {
+    return this.restaurants.filter(r => r.menu.includes(dishName))
+      .map(r => r.name)
+    // Complete here
+  },
+  countNumberOfRestaurantsInArea: function (area) {
+    return this.restaurants.filter(r => r.address.area === area).length
+    // Complete here
+  },
+};
   
   /*
   DO NOT EDIT ANYTHING BELOW THIS LINE

@@ -10,7 +10,7 @@ the list of available products and the list of products introduced in the shoppi
 at least should have:
 var product = {
   id:
-  name:
+  name: 
   price:
   stock:
 }

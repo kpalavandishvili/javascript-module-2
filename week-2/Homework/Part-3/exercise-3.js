@@ -9,16 +9,25 @@ only if the inserted amount is greater or equal than the price of the coffee!
 */
 
 let coffeeMachine = {
-    brand: "Super Coffee",
-    prices: {
-      cappuccino: 2.4,
-      blackCoffee: 1.5,
-      flatWhite: 3.0,
-    },
-    insertedAmount: 0,
-    insertMoney: function (amount) {},
-    getCoffee: function (coffee) {},
-  };
+  brand: "Super Coffee",
+  prices: {
+    cappuccino: 2.4,
+    blackCoffee: 1.5,
+    flatWhite: 3.0,
+  },
+  insertedAmount: 0,
+  insertMoney: function (amount) {
+    return this.insertedAmount = amount;
+  },
+  getCoffee: function (coffee) {
+    if (this.insertedAmount >= this.prices[coffee]) {
+      return `Please take your ${coffee}`
+
+    } else {
+      return `Sorry you don't have enough money for a ${coffee} `
+    }
+  },
+};
   
   /*
   DO NOT EDIT ANYTHING BELOW THIS LINE
