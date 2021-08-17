@@ -16,4 +16,12 @@ var car = {
 };
 
 */
+let person = {
+    name: "George",
+    surname: "Modebadze",
+    birth_year: 1974,
+    birth_place: "Georgia",
+    ocuppacion: "Math teacher"
+}
+console.log(person.name);
 
